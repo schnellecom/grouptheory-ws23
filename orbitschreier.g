@@ -10,7 +10,7 @@
 # orb       ,the orbit of alpha
 
 Orbitschreier := function(G, alpha, phi, Omega)
-    local V, orb, j, g, gamma;
+    local V, orb, j, g, gamma, w;
     orb:=[alpha];
     j:=1;
     V := [];
@@ -23,7 +23,7 @@ Orbitschreier := function(G, alpha, phi, Omega)
         for g in GeneratorsOfGroup(G) do
             if not phi(gamma, g) in orb then
                 Append(orb, [phi(gamma, g)]);
-                Add(V, g^(-1), Position(Omega, phi(gamma, g)));
+                V[Position(Omega, phi(gamma, g))] := g^(-1);
             fi;
         od;
         j:=j+1;
