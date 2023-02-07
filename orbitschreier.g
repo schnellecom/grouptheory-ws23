@@ -1,6 +1,6 @@
 # OrbitAndSchreierVector from group theory, chapter 2, alg 3
 # inputs: 
-# G         ,a fg group
+# G         ,a permutation group
 # alpha     ,an element the group acts on
 # phi       ,a group action from G on Omega
 # Omega     ,a G-set
