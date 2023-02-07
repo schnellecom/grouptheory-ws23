@@ -14,16 +14,16 @@ Orbitschreier := function(G, alpha, phi, Omega)
     orb:=[alpha];
     j:=1;
     V := [];
-    for g in Elements(G) do
+    for w in Omega do
         Append(V, [0]);
     od;
-    Add(V, One(G), Position(Elements(G), alpha));
+    Add(V, One(G), Position(Omega, alpha));
     while j <= Length(orb) do
         gamma := orb[j];
         for g in GeneratorsOfGroup(G) do
             if not phi(gamma, g) in orb then
                 Append(orb, [phi(gamma, g)]);
-                Add(V, g^(-1), Position(Elements(G), phi(gamma, g)));
+                Add(V, g^(-1), Position(Omega, phi(gamma, g)));
             fi;
         od;
         j:=j+1;
